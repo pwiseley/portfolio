@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petiton Wiseley</title>
+  <meta name="description" content="Petiton Wiseley — Software engineering student. Learning by building. Aiming to ship." />
+  <meta name="author" content="Petiton Wiseley" />
+  <meta property="og:title" content="Petiton Wiseley" />
+  <meta property="og:description" content="Learning by building. Aiming to ship." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬡</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:       #f5f2ed;
+      --surface:  #edeae3;
+      --border:   #ddd9d0;
+      --text:     #2c2a26;
+      --muted:    #8a8376;
+      --accent:   #4a7c59;
+      --tag-bg:   #e6f0ea;
+      --tag-text: #3a6347;
+      --font-serif: 'Lora', Georgia, serif;
+      --font-sans:  'DM Sans', system-ui, sans-serif;
+      --max-w: 660px;
+      --gap: clamp(2.5rem, 6vw, 4rem);
+      --t: 0.22s ease;
+    }
+    [data-theme="dark"] {
+      --bg:       #181714;
+      --surface:  #201f1c;
+      --border:   #2e2c27;
+      --text:     #e8e4dc;
+      --muted:    #6f6b60;
+      --accent:   #6aad7e;
+      --tag-bg:   #1e2e22;
+      --tag-text: #6aad7e;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: var(--font-sans);
+      font-size: clamp(14.5px, 2.1vw, 16px);
+      line-height: 1.75; font-weight: 300;
+      transition: background var(--t), color var(--t);
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 2rem); }
+
+    section {
+      padding: var(--gap) 0;
+      border-top: 1px solid var(--border);
+      opacity: 0; transform: translateY(16px);
+      animation: up 0.55s ease forwards;
+    }
+    section:nth-child(1){animation-delay:.05s}
+    section:nth-child(2){animation-delay:.13s}
+    section:nth-child(3){animation-delay:.22s}
+    section:nth-child(4){animation-delay:.31s}
+    section:nth-child(5){animation-delay:.40s}
+    section:nth-child(6){animation-delay:.49s}
+    @keyframes up { to { opacity:1; transform:translateY(0); } }
+
+    /* ── Header ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--bg); border-bottom: 1px solid var(--border);
+      transition: background var(--t);
+    }
+    nav {
+      max-width: var(--max-w); margin: 0 auto;
+      padding: .85rem clamp(1.25rem,5vw,2rem);
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    }
+    .nav-logo { font-family: var(--font-serif); font-size: .95rem; font-weight: 500; color: var(--text); text-decoration: none; flex-shrink: 0; }
+    .nav-anchors { display: flex; gap: 0; align-items: center; flex: 1; }
+    .nav-anchors a { font-size: .77rem; color: var(--muted); text-decoration: none; padding: .25rem .5rem; border-radius: 5px; transition: color var(--t), background var(--t); white-space: nowrap; }
+    .nav-anchors a:hover { color: var(--text); background: var(--surface); }
+    .nav-right { display: flex; gap: .4rem; align-items: center; flex-shrink: 0; }
+    .ctrl-btn { background: none; border: 1px solid var(--border); border-radius: 6px; padding: .28rem .6rem; font-family: var(--font-sans); font-size: .74rem; color: var(--muted); cursor: pointer; transition: color var(--t), border-color var(--t), background var(--t); }
+    .ctrl-btn:hover { color: var(--text); border-color: var(--muted); background: var(--surface); }
+
+    /* ── Typography ── */
+    h1 { font-family: var(--font-serif); font-size: clamp(2rem, 7vw, 2.8rem); font-weight: 500; line-height: 1.15; letter-spacing: -.02em; margin-bottom: .5rem; }
+    h2 { font-size: .69rem; font-weight: 500; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.4rem; }
+    p { margin-bottom: .7rem; }
+    p:last-child { margin-bottom: 0; }
+    a { color: var(--accent); text-decoration: none; transition: opacity var(--t); }
+    a:hover { opacity: .65; }
+
+    /* ── Hero ── */
+    .hero { padding-top: var(--gap); padding-bottom: var(--gap); border-top: none !important; }
+    .tagline { font-family: var(--font-serif); font-style: italic; font-size: clamp(.95rem, 2.8vw, 1.1rem); color: var(--muted); margin-bottom: 1.5rem; }
+    .hero-meta { font-size: .8rem; color: var(--muted); display: flex; flex-wrap: wrap; column-gap: 1.2rem; row-gap: .2rem; align-items: center; }
+    .sep { opacity: .3; }
+
+    /* ── About ── */
+    .about-p { font-size: .97rem; color: var(--text); line-height: 1.82; }
+
+    /* ── Projects ── */
+    .project-list { display: flex; flex-direction: column; }
+    .project-item { display: block; padding: 1.15rem 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; }
+    .project-item:last-child { border-bottom: none; }
+    .proj-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: .32rem; }
+    .proj-name { font-weight: 500; font-size: .94rem; color: var(--text); transition: color var(--t); }
+    .project-item:hover .proj-name { color: var(--accent); }
+
+    .proj-cta {
+      font-size: .7rem; font-weight: 500;
+      color: var(--accent); border: 1px solid var(--accent);
+      border-radius: 5px; padding: .17rem .52rem;
+      white-space: nowrap; flex-shrink: 0;
+      display: inline-flex; align-items: center; gap: .28rem;
+      transition: opacity var(--t), background var(--t);
+      opacity: 1; background: var(--tag-bg);
+    }
+    @media (hover: hover) {
+      .proj-cta { opacity: 0; background: transparent; }
+      .project-item:hover .proj-cta { opacity: 1; background: var(--tag-bg); }
+    }
+    .proj-cta svg { width: 11px; height: 11px; }
+
+    .proj-desc { font-size: .82rem; color: var(--muted); line-height: 1.55; margin-bottom: .5rem; }
+    .stack { display: flex; flex-wrap: wrap; gap: .28rem; }
+    .stack span { font-size: .7rem; background: var(--tag-bg); color: var(--tag-text); border-radius: 4px; padding: .14rem .45rem; }
+
+    /* ── Books ── */
+    .book-list { display: flex; flex-direction: column; }
+    .book-item { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: .76rem 0; border-bottom: 1px solid var(--border); font-size: .86rem; text-decoration: none; color: inherit; }
+    .book-item:last-child { border-bottom: none; }
+    .book-title { font-weight: 400; color: var(--text); transition: color var(--t); }
+    .book-item:hover .book-title { color: var(--accent); }
+    .book-author { font-size: .78rem; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+
+    /* ── Contact ── */
+    .link-list { display: flex; flex-wrap: wrap; gap: .6rem; }
+    .link-pill { display: inline-flex; align-items: center; gap: .38rem; padding: .46rem 1rem; border: 1px solid var(--border); border-radius: 999px; font-size: .82rem; color: var(--text); background: var(--surface); transition: border-color var(--t), color var(--t), background var(--t); }
+    .link-pill:hover { border-color: var(--accent); color: var(--accent); opacity: 1; background: var(--tag-bg); }
+    .link-pill svg { width: 13px; height: 13px; opacity: .55; flex-shrink: 0; }
+
+    /* ── Footer ── */
+    footer { border-top: 1px solid var(--border); padding: 2rem 0 3.5rem; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+    footer p { font-size: .75rem; color: var(--muted); margin: 0; }
+
+    /* ── Responsive ── */
+    @media (max-width: 500px) {
+      .nav-anchors { display: none; }
+      .book-item { flex-direction: column; gap: .08rem; }
+      .book-author { white-space: unset; }
+    }
+
+    /* ── Lang ── */
+    [data-lang="fr"] { display: none; }
+    .lang-fr [data-lang="en"] { display: none; }
+    .lang-fr [data-lang="fr"] { display: unset; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#" class="nav-logo">Petiton.dev</a>
+    <div class="nav-anchors">
+      <a href="#about" data-lang="en">About</a><a href="#about" data-lang="fr">À propos</a>
+      <a href="#projects" data-lang="en">Projects</a><a href="#projects" data-lang="fr">Projets</a>
+      <a href="#books" data-lang="en">Reading</a><a href="#books" data-lang="fr">Lectures</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="ctrl-btn" id="lang-btn">FR</button>
+      <button class="ctrl-btn" id="theme-btn"><span id="theme-icon">☽</span></button>
+    </div>
+  </nav>
+</header>
+
+<main><div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Petiton Wiseley</h1>
+    <p class="tagline">
+      <span data-lang="en">Learning by building. Aiming to ship.</span>
+      <span data-lang="fr">J'apprends en construisant. Mon objectif : livrer.</span>
+    </p>
+    <div class="hero-meta">
+      <span data-lang="en">Software Engineering — Université Laval</span>
+      <span data-lang="fr">Génie Logiciel — Université Laval</span>
+      <span class="sep">·</span>
+      <span>Quebec City</span>
+      <span class="sep">·</span>
+      <span data-lang="en">Open to internships</span>
+      <span data-lang="fr">Disponible pour stages</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2><span data-lang="en">About</span><span data-lang="fr">À propos</span></h2>
+    <p class="about-p" data-lang="en">I'm a software engineering student at Université Laval. I build solo projects and team projects — backend systems, UIs, infrastructure. I care about code that's readable and maintainable over code that's impressive.</p>
+    <p class="about-p" data-lang="en">I want to ship products that bring real value to people. Not just features — things that are actually useful, that solve a real problem, that someone would miss if they disappeared.</p>
+    <p class="about-p" data-lang="fr">Étudiant en génie logiciel à l'Université Laval. Je build en solo et en équipe — backend, UI, infrastructure. Je préfère le code lisible et maintenable au code qui impressionne.</p>
+    <p class="about-p" data-lang="fr">Je veux livrer des produits qui apportent une vraie valeur. Pas juste des features — des choses vraiment utiles, qui résolvent un vrai problème, qui manqueraient si elles disparaissaient.</p>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2><span data-lang="en">Projects</span><span data-lang="fr">Projets</span></h2>
+    <div class="project-list">
+
+      <!-- UTasks -->
+      <a href="https://github.com/pwiseley/UTasks-app" target="_blank" rel="noopener" class="project-item">
+        <div class="proj-top">
+          <span class="proj-name">UTasks</span>
+          <span class="proj-cta">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
+          </span>
+        </div>
+        <p class="proj-desc" data-lang="en">Trello-like team task manager — boards, cards, real-time user chat. REST API backend, authenticated sessions.</p>
+        <p class="proj-desc" data-lang="fr">Gestionnaire de tâches en équipe type Trello — tableaux, cartes, chat utilisateur en temps réel. Backend REST API, sessions authentifiées.</p>
+        <div class="stack"><span>Vue 3</span><span>Vite</span><span>Node.js</span><span>Express</span><span>REST API</span><span>MongoDB</span><span>Socket.io</span><span>Passport.js</span><span>Heroku</span></div>
+      </a>
+
+      <!-- floppa-project -->
+      <a href="https://github.com/pwiseley/Floppa-app" target="_blank" rel="noopener" class="project-item">
+        <div class="proj-top">
+          <span class="proj-name">Floppa-project</span>
+          <span class="proj-cta">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
+          </span>
+        </div>
+        <p class="proj-desc" data-lang="en">Marketplace — listings, transactions, user accounts. Three-layer architecture, REST API with Jersey, clean code practices, integration tests.</p>
+        <p class="proj-desc" data-lang="fr">Marketplace — annonces, transactions, comptes utilisateurs. Architecture trois couches, REST API avec Jersey, clean code, tests d'intégration.</p>
+        <div class="stack"><span>Java</span><span>Jersey</span><span>REST API</span><span>MongoDB</span><span>Morphia</span><span>Docker</span><span>GHCR</span><span>CI/CD</span><span>TDD</span><span>Clean Code</span></div>
+      </a>
+
+      <!-- UFood -->
+      <a href="https://github.com/pwiseley/UFood-app" target="_blank" rel="noopener" class="project-item">
+        <div class="proj-top">
+          <span class="proj-name">UFood</span>
+          <span class="proj-cta">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
+          </span>
+        </div>
+        <p class="proj-desc" data-lang="en">Restaurant discovery and social platform — map-based search, user profiles, favorites. REST API integration with Mapbox.</p>
+        <p class="proj-desc" data-lang="fr">Plateforme de découverte de restaurants — recherche sur carte, profils utilisateurs, favoris. Intégration REST API et Mapbox.</p>
+        <div class="stack"><span>Vue 3</span><span>REST API</span><span>Mapbox GL JS</span><span>Vue Router</span><span>Axios</span><span>Bootstrap</span></div>
+      </a>
+
+      <!-- Smart City -->
+      <a href="https://github.com/pwiseley/SmartCity-DeliveryRobot" target="_blank" rel="noopener" class="project-item">
+        <div class="proj-top">
+          <span class="proj-name">Smart City — Autonomous Delivery Robots</span>
+          <span class="proj-cta">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
+          </span>
+        </div>
+        <p class="proj-desc" data-lang="en">Robots navigating a smart city to transport goods A→B. Includes a Vue/TypeScript frontend for monitoring, computer vision for obstacle detection, WebSocket communication, integration tests.</p>
+        <p class="proj-desc" data-lang="fr">Robots naviguant en ville intelligente pour transporter des marchandises A→B. Frontend Vue/TypeScript de monitoring, vision par ordinateur pour la détection d'obstacles, communication WebSocket, tests d'intégration.</p>
+        <div class="stack"><span>ROS2</span><span>Python</span><span>OpenCV</span><span>WebSocket</span><span>Vue 3</span><span>TypeScript</span><span>Docker</span><span>systemd</span><span>CI/CD</span></div>
+      </a>
+
+      <!-- Toastmasters -->
+      <a href="https://github.com/pwiseley/Toastmasters-app" target="_blank" rel="noopener" class="project-item">
+        <div class="proj-top">
+          <span class="proj-name">Toastmasters Platform</span>
+          <span class="proj-cta">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
+          </span>
+        </div>
+        <p class="proj-desc" data-lang="en">Club management system — meeting scheduling, role assignments, async email + PDF via Celery/Redis. Dockerized, deployed on Railway.</p>
+        <p class="proj-desc" data-lang="fr">Gestion de club — planning, rôles, emails + PDF async via Celery/Redis. Docker, déployé sur Railway.</p>
+        <div class="stack"><span>Django</span><span>PostgreSQL</span><span>Celery</span><span>Redis</span><span>Docker</span><span>Railway</span></div>
+      </a>
+
+      <!-- HeatMyFloor -->
+      <a href="https://github.com/pwiseley/HeatMyFloor-app" target="_blank" rel="noopener" class="project-item">
+        <div class="proj-top">
+          <span class="proj-name">HeatMyFloor</span>
+          <span class="proj-cta">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
+          </span>
+        </div>
+        <p class="proj-desc" data-lang="en">Modeling tool for heated floor wire paths. Memento + Strategy patterns, Larman's Controller, strict domain/presentation separation.</p>
+        <p class="proj-desc" data-lang="fr">Outil de modélisation de chemins de câbles — Memento + Strategy, Controller de Larman, séparation domaine/présentation.</p>
+        <div class="stack"><span>Java</span><span>Swing</span><span>SOLID+T</span><span>Design Patterns</span></div>
+      </a>
+
+      <!-- Email Server -->
+      <a href="https://github.com/pwiseley/ULavalParking-app" target="_blank" rel="noopener" class="project-item">
+        <div class="proj-top">
+          <span class="proj-name">ULaval Parking App</span>
+          <span class="proj-cta">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
+          </span>
+        </div>
+        <p class="proj-desc" data-lang="en">UI/UX design for a parking permit management and buying app.</p>
+        <p class="proj-desc" data-lang="fr">UI/UX pour une application de gestion, d'achat de permis de stationnement.</p>
+        <div class="stack"><span>Figma</span></div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- BOOKS -->
+  <section id="books">
+    <h2><span data-lang="en">Reading</span><span data-lang="fr">Lectures</span></h2>
+    <div class="book-list">
+      <a href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/" target="_blank" rel="noopener" class="book-item">
+        <span class="book-title">The Pragmatic Programmer</span>
+        <span class="book-author">Hunt & Thomas</span>
+      </a>
+      <a href="https://www.goodreads.com/book/show/3735293-clean-code" target="_blank" rel="noopener" class="book-item">
+        <span class="book-title">Clean Code</span>
+        <span class="book-author">Robert C. Martin</span>
+      </a>
+      <a href="https://www.goodreads.com/book/show/6820890-a-philosophy-of-software-design" target="_blank" rel="noopener" class="book-item">
+        <span class="book-title">A Philosophy of Software Design</span>
+        <span class="book-author">John Ousterhout</span>
+      </a>
+      <a href="https://www.goodreads.com/book/show/8564020-designing-with-the-mind-in-mind" target="_blank" rel="noopener" class="book-item">
+        <span class="book-title">Designing with the Mind in Mind</span>
+        <span class="book-author">Jeff Johnson</span>
+      </a>
+      <a href="https://www.goodreads.com/book/show/85019.Applying_UML_and_Patterns" target="_blank" rel="noopener" class="book-item">
+        <span class="book-title">Applying UML and Patterns</span>
+        <span class="book-author">Craig Larman</span>
+      </a>
+      <a href="https://www.goodreads.com/book/show/93654.The_Lean_Startup" target="_blank" rel="noopener" class="book-item">
+        <span class="book-title">The Lean Startup</span>
+        <span class="book-author">Eric Ries</span>
+      </a>
+      <a href="https://www.goodreads.com/book/show/18050143-zero-to-one" target="_blank" rel="noopener" class="book-item">
+        <span class="book-title">Zero to One</span>
+        <span class="book-author">Peter Thiel</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="link-list">
+      <a href="https://github.com/pwiseley" target="_blank" rel="noopener" class="link-pill">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/petitonWiseley" target="_blank" rel="noopener" class="link-pill">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="mailto:wiseley@petiton.dev" class="link-pill">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        wiseley@petiton.dev
+      </a>
+    </div>
+  </section>
+
+</div></main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Petiton Wiseley</p>
+  </div>
+</footer>
+
+<script>
+  const root = document.documentElement;
+  const themeBtn = document.getElementById('theme-btn');
+  const themeIcon = document.getElementById('theme-icon');
+  setTheme(localStorage.getItem('theme') || 'light');
+  themeBtn.addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
+  function setTheme(t) { root.dataset.theme = t; themeIcon.textContent = t === 'dark' ? '○' : '☽'; localStorage.setItem('theme', t); }
+
+  const langBtn = document.getElementById('lang-btn');
+  let lang = localStorage.getItem('lang') || 'en';
+  setLang(lang);
+  langBtn.addEventListener('click', () => setLang(lang === 'en' ? 'fr' : 'en'));
+  function setLang(l) { lang = l; document.body.classList.toggle('lang-fr', l === 'fr'); langBtn.textContent = l === 'en' ? 'FR' : 'EN'; document.documentElement.lang = l; localStorage.setItem('lang', l); }
+</script>
+</body>
+</html>
