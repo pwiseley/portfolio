@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Petiton Wiseley</title>
-  <meta name="description" content="Petiton Wiseley — Software engineering student. Learning by building. Aiming to ship." />
+  <meta name="description" content="Petiton Wiseley, software engineering student. Learning by building. Aiming to ship." />
   <meta name="author" content="Petiton Wiseley" />
   <meta property="og:title" content="Petiton Wiseley" />
   <meta property="og:description" content="Learning by building. Aiming to ship." />
@@ -189,29 +189,70 @@
       <span data-lang="fr">J'apprends en construisant. Mon objectif : livrer.</span>
     </p>
     <div class="hero-meta">
-      <span data-lang="en">Software Engineering — Université Laval</span>
-      <span data-lang="fr">Génie Logiciel — Université Laval</span>
+      <span data-lang="en">Software Engineering, Université Laval</span>
+      <span data-lang="fr">Génie Logiciel, Université Laval</span>
       <span class="sep">·</span>
       <span>Quebec City</span>
-      <span class="sep">·</span>
-      <span data-lang="en">Open to internships</span>
-      <span data-lang="fr">Disponible pour stages</span>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
     <h2><span data-lang="en">About</span><span data-lang="fr">À propos</span></h2>
-    <p class="about-p" data-lang="en">I'm a software engineering student at Université Laval. I build solo projects and team projects — backend systems, UIs, infrastructure. I care about code that's readable and maintainable over code that's impressive.</p>
-    <p class="about-p" data-lang="en">I want to ship products that bring real value to people. Not just features — things that are actually useful, that solve a real problem, that someone would miss if they disappeared.</p>
-    <p class="about-p" data-lang="fr">Étudiant en génie logiciel à l'Université Laval. Je build en solo et en équipe — backend, UI, infrastructure. Je préfère le code lisible et maintenable au code qui impressionne.</p>
-    <p class="about-p" data-lang="fr">Je veux livrer des produits qui apportent une vraie valeur. Pas juste des features — des choses vraiment utiles, qui résolvent un vrai problème, qui manqueraient si elles disparaissaient.</p>
+    <p class="about-p" data-lang="en">I'm a software engineering student at Université Laval. I build solo projects and team projects: backend systems, UIs, infrastructure. I care about code that's readable and maintainable over code that's impressive.</p>
+    <p class="about-p" data-lang="en">I want to ship products that bring real value to people. Not just features, but things that are actually useful, that solve a real problem, that someone would miss if they disappeared.</p>
+    <p class="about-p" data-lang="en">Lately I've been going deeper into machine learning, extending the same build-to-learn approach into models and data.</p>
+    <p class="about-p" data-lang="fr">Étudiant en génie logiciel à l'Université Laval. Je build en solo et en équipe : backend, UI, infrastructure. Je préfère le code lisible et maintenable au code qui impressionne.</p>
+    <p class="about-p" data-lang="fr">Je veux livrer des produits qui apportent une vraie valeur. Pas juste des features, mais des choses vraiment utiles, qui résolvent un vrai problème, qui manqueraient si elles disparaissaient.</p>
+    <p class="about-p" data-lang="fr">Depuis peu, je creuse le machine learning, en prolongeant la même approche d'apprentissage par la pratique vers les modèles et les données.</p>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects">
     <h2><span data-lang="en">Projects</span><span data-lang="fr">Projets</span></h2>
     <div class="project-list">
+
+      <!-- Vehicle Maintenance Tracker -->
+      <a href="https://github.com/pwiseley/vehicle-maintenance-tracker" target="_blank" rel="noopener" class="project-item">
+        <div class="proj-top">
+          <span class="proj-name">Vehicle Maintenance Tracker</span>
+          <span class="proj-cta">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
+          </span>
+        </div>
+        <p class="proj-desc" data-lang="en">Fleet maintenance tracker built end to end in C#. ASP.NET Core REST API on EF Core and PostgreSQL, React/TypeScript frontend, automated tests, and an Azure DevOps pipeline from code to production.</p>
+        <p class="proj-desc" data-lang="fr">Suivi d'entretien de flotte bâti de bout en bout en C#. API REST ASP.NET Core sur EF Core et PostgreSQL, frontend React/TypeScript, tests automatisés et pipeline Azure DevOps du code à la production.</p>
+        <div class="stack"><span>C#</span><span>ASP.NET Core</span><span>EF Core</span><span>PostgreSQL</span><span>React</span><span>TypeScript</span><span>Azure DevOps</span><span>Docker</span><span>CI/CD</span></div>
+      </a>
+
+      <!-- URL Shortener -->
+      <a href="https://github.com/pwiseley/url-shortener" target="_blank" rel="noopener" class="project-item">
+        <div class="proj-top">
+          <span class="proj-name">URL Shortener</span>
+          <span class="proj-cta">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
+          </span>
+        </div>
+        <p class="proj-desc" data-lang="en">Link shortening service with click analytics. Java/Spring Boot backend, Angular/TypeScript frontend, and a full CI/CD pipeline on Azure DevOps with container builds and dependency scanning.</p>
+        <p class="proj-desc" data-lang="fr">Service de raccourcissement de liens avec analyse des clics. Backend Java/Spring Boot, frontend Angular/TypeScript, et pipeline CI/CD complet sur Azure DevOps avec builds de conteneurs et analyse des dépendances.</p>
+        <div class="stack"><span>Java</span><span>Spring Boot</span><span>Angular</span><span>TypeScript</span><span>PostgreSQL</span><span>Azure DevOps</span><span>Docker</span><span>CI/CD</span></div>
+      </a>
+
+      <!-- Insurance Quote Calculator -->
+      <a href="https://github.com/pwiseley/insurance-quote" target="_blank" rel="noopener" class="project-item">
+        <div class="proj-top">
+          <span class="proj-name">Insurance Quote Calculator</span>
+          <span class="proj-cta">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
+          </span>
+        </div>
+        <p class="proj-desc" data-lang="en">Insurance quote calculator modeling multiple policy types through JPA inheritance. Java/Spring Boot backend with a clean domain layer, React/TypeScript frontend.</p>
+        <p class="proj-desc" data-lang="fr">Calculateur de soumissions d'assurance modélisant plusieurs types de polices via l'héritage JPA. Backend Java/Spring Boot avec une couche domaine propre, frontend React/TypeScript.</p>
+        <div class="stack"><span>Java</span><span>Spring Boot</span><span>JPA</span><span>React</span><span>TypeScript</span><span>PostgreSQL</span></div>
+      </a>
 
       <!-- UTasks -->
       <a href="https://github.com/pwiseley/UTasks-app" target="_blank" rel="noopener" class="project-item">
@@ -222,22 +263,22 @@
             <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
           </span>
         </div>
-        <p class="proj-desc" data-lang="en">Trello-like team task manager — boards, cards, real-time user chat. REST API backend, authenticated sessions.</p>
-        <p class="proj-desc" data-lang="fr">Gestionnaire de tâches en équipe type Trello — tableaux, cartes, chat utilisateur en temps réel. Backend REST API, sessions authentifiées.</p>
+        <p class="proj-desc" data-lang="en">Trello-like team task manager with boards, cards, and real-time user chat. Node.js REST API backend with authenticated sessions over Socket.io.</p>
+        <p class="proj-desc" data-lang="fr">Gestionnaire de tâches en équipe type Trello avec tableaux, cartes et chat utilisateur en temps réel. Backend REST API Node.js avec sessions authentifiées via Socket.io.</p>
         <div class="stack"><span>Vue 3</span><span>Vite</span><span>Node.js</span><span>Express</span><span>REST API</span><span>MongoDB</span><span>Socket.io</span><span>Passport.js</span><span>Heroku</span></div>
       </a>
 
-      <!-- floppa-project -->
+      <!-- Floppa Marketplace -->
       <a href="https://github.com/pwiseley/Floppa-app" target="_blank" rel="noopener" class="project-item">
         <div class="proj-top">
-          <span class="proj-name">Floppa-project</span>
+          <span class="proj-name">Floppa Marketplace</span>
           <span class="proj-cta">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
           </span>
         </div>
-        <p class="proj-desc" data-lang="en">Marketplace — listings, transactions, user accounts. Three-layer architecture, REST API with Jersey, clean code practices, integration tests.</p>
-        <p class="proj-desc" data-lang="fr">Marketplace — annonces, transactions, comptes utilisateurs. Architecture trois couches, REST API avec Jersey, clean code, tests d'intégration.</p>
+        <p class="proj-desc" data-lang="en">Marketplace with listings and buyer/seller transactions. Java three-layer architecture, REST API with Jersey, clean code practices, integration tests.</p>
+        <p class="proj-desc" data-lang="fr">Marketplace avec annonces et transactions acheteur/vendeur. Architecture Java trois couches, REST API avec Jersey, clean code, tests d'intégration.</p>
         <div class="stack"><span>Java</span><span>Jersey</span><span>REST API</span><span>MongoDB</span><span>Morphia</span><span>Docker</span><span>GHCR</span><span>CI/CD</span><span>TDD</span><span>Clean Code</span></div>
       </a>
 
@@ -250,27 +291,27 @@
             <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
           </span>
         </div>
-        <p class="proj-desc" data-lang="en">Restaurant discovery and social platform — map-based search, user profiles, favorites. REST API integration with Mapbox.</p>
-        <p class="proj-desc" data-lang="fr">Plateforme de découverte de restaurants — recherche sur carte, profils utilisateurs, favoris. Intégration REST API et Mapbox.</p>
+        <p class="proj-desc" data-lang="en">Restaurant discovery and social platform with map-based search, user profiles, and favorites. REST API integration with Mapbox.</p>
+        <p class="proj-desc" data-lang="fr">Plateforme de découverte de restaurants avec recherche sur carte, profils utilisateurs et favoris. Intégration REST API et Mapbox.</p>
         <div class="stack"><span>Vue 3</span><span>REST API</span><span>Mapbox GL JS</span><span>Vue Router</span><span>Axios</span><span>Bootstrap</span></div>
       </a>
 
       <!-- Smart City -->
       <a href="https://github.com/pwiseley/SmartCity-DeliveryRobot" target="_blank" rel="noopener" class="project-item">
         <div class="proj-top">
-          <span class="proj-name">Smart City — Autonomous Delivery Robots</span>
+          <span class="proj-name">Smart City, Autonomous Delivery Robots</span>
           <span class="proj-cta">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
           </span>
         </div>
-        <p class="proj-desc" data-lang="en">Robots navigating a smart city to transport goods A→B. Includes a Vue/TypeScript frontend for monitoring, computer vision for obstacle detection, WebSocket communication, integration tests.</p>
-        <p class="proj-desc" data-lang="fr">Robots naviguant en ville intelligente pour transporter des marchandises A→B. Frontend Vue/TypeScript de monitoring, vision par ordinateur pour la détection d'obstacles, communication WebSocket, tests d'intégration.</p>
+        <p class="proj-desc" data-lang="en">Robots navigating a smart city to transport goods from A to B. Includes a Vue/TypeScript frontend for monitoring, computer vision for obstacle detection, WebSocket communication, integration tests.</p>
+        <p class="proj-desc" data-lang="fr">Robots naviguant en ville intelligente pour transporter des marchandises de A à B. Frontend Vue/TypeScript de monitoring, vision par ordinateur pour la détection d'obstacles, communication WebSocket, tests d'intégration.</p>
         <div class="stack"><span>ROS2</span><span>Python</span><span>OpenCV</span><span>WebSocket</span><span>Vue 3</span><span>TypeScript</span><span>Docker</span><span>systemd</span><span>CI/CD</span></div>
       </a>
 
       <!-- Toastmasters -->
-      <a href="https://github.com/pwiseley/Toastmasters-app" target="_blank" rel="noopener" class="project-item">
+      <a href="https://github.com/pwiseley/ToastmastersFSA-app" target="_blank" rel="noopener" class="project-item">
         <div class="proj-top">
           <span class="proj-name">Toastmasters Platform</span>
           <span class="proj-cta">
@@ -278,8 +319,8 @@
             <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
           </span>
         </div>
-        <p class="proj-desc" data-lang="en">Club management system — meeting scheduling, role assignments, async email + PDF via Celery/Redis. Dockerized, deployed on Railway.</p>
-        <p class="proj-desc" data-lang="fr">Gestion de club — planning, rôles, emails + PDF async via Celery/Redis. Docker, déployé sur Railway.</p>
+        <p class="proj-desc" data-lang="en">Club management system with meeting scheduling, role assignments, and async email plus PDF via Celery/Redis. Dockerized, deployed on Railway.</p>
+        <p class="proj-desc" data-lang="fr">Gestion de club avec planning, rôles, emails et PDF async via Celery/Redis. Docker, déployé sur Railway.</p>
         <div class="stack"><span>Django</span><span>PostgreSQL</span><span>Celery</span><span>Redis</span><span>Docker</span><span>Railway</span></div>
       </a>
 
@@ -292,12 +333,12 @@
             <span data-lang="en">View on GitHub</span><span data-lang="fr">Voir sur GitHub</span>
           </span>
         </div>
-        <p class="proj-desc" data-lang="en">Modeling tool for heated floor wire paths. Memento + Strategy patterns, Larman's Controller, strict domain/presentation separation.</p>
-        <p class="proj-desc" data-lang="fr">Outil de modélisation de chemins de câbles — Memento + Strategy, Controller de Larman, séparation domaine/présentation.</p>
+        <p class="proj-desc" data-lang="en">Modeling tool for heated floor wire paths. Memento plus Strategy patterns, Larman's Controller, strict domain/presentation separation.</p>
+        <p class="proj-desc" data-lang="fr">Outil de modélisation de chemins de câbles pour planchers chauffants. Memento plus Strategy, Controller de Larman, séparation domaine/présentation.</p>
         <div class="stack"><span>Java</span><span>Swing</span><span>SOLID+T</span><span>Design Patterns</span></div>
       </a>
 
-      <!-- Email Server -->
+      <!-- ULaval Parking UI/UX -->
       <a href="https://github.com/pwiseley/ULavalParking-app" target="_blank" rel="noopener" class="project-item">
         <div class="proj-top">
           <span class="proj-name">ULaval Parking App</span>
@@ -320,7 +361,7 @@
     <div class="book-list">
       <a href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/" target="_blank" rel="noopener" class="book-item">
         <span class="book-title">The Pragmatic Programmer</span>
-        <span class="book-author">Hunt & Thomas</span>
+        <span class="book-author">Hunt &amp; Thomas</span>
       </a>
       <a href="https://www.goodreads.com/book/show/3735293-clean-code" target="_blank" rel="noopener" class="book-item">
         <span class="book-title">Clean Code</span>
